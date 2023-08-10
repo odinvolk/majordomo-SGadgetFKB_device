@@ -1,0 +1,67 @@
+<?php
+//$ot = $this->object_title;
+//$desc = $this->description;
+//$mqtt_st = $this->getProperty('mqtt_status');
+//$telegram_st = $this->getProperty('telegram_status');
+//$registerEvent_st = $this->getProperty('registerEvent_status');
+//$write_to_properties = $this->getProperty('write_to_properties');
+$pass = $this->getProperty('passw');
+
+$ipterm = 'http://'.$this->getProperty('ip4').':'.$this->getProperty('port');
+
+$getInfo = getURL($ipterm.'/?cmd=deviceInfo&password='.urlencode($pass).'&type=json');
+
+$state = json_decode($getInfo, true);
+//-------------------------------------------------------------------------print_r($array);
+$this->setProperty('internalStorageFreeSpace', $state['internalStorageFreeSpace']);
+$this->setProperty('deviceName', $state['deviceName']);
+$this->setProperty('appVersionCode', $state['appVersionCode']);
+$this->setProperty('appTotalMemory', $state['appTotalMemory']);
+$this->setProperty('lastAppStart', $state['lastAppStart']);
+$this->setProperty('locationAltitude', $state['locationAltitude']);
+$this->setProperty('locationLongitude', $state['locationLongitude']);
+$this->setProperty('wifiSignalLevel', $state['wifiSignalLevel']);
+$this->setProperty('isScreenOn', $state['isScreenOn']);
+$this->setProperty('currentFragment', $state['currentFragment']);
+$this->setProperty('ramFreeMemory', $state['ramFreeMemory']);
+$this->setProperty('kioskMode', $state['kioskMode']);
+$this->setProperty('displayHeightPixels', $state['displayHeightPixels']);
+$this->setProperty('appVersionName', $state['appVersionName']);
+$this->setProperty('maintenanceMode', $state['maintenanceMode']);
+$this->setProperty('externalStorageTotalSpace', $state['externalStorageTotalSpace']);
+$this->setProperty('appFreeMemory', $state['appFreeMemory']);
+$this->setProperty('internalStorageTotalSpace', $state['internalStorageTotalSpace']);
+$this->setProperty('ramUsedMemory', $state['ramUsedMemory']);
+$this->setProperty('foregroundApp', $state['foregroundApp']);
+$this->setProperty('ssid', $state['ssid']);
+$this->setProperty('mac', $state['mac']);
+$this->setProperty('startUrl', $state['startUrl']);
+$this->setProperty('screenOrientation', $state['screenOrientation']);
+$this->setProperty('externalStorageFreeSpace', $state['externalStorageFreeSpace']);
+$this->setProperty('isLicensed', $state['isLicensed']);
+$this->setProperty('androidSdk', $state['androidSdk']);
+$this->setProperty('deviceManufacturer', $state['deviceManufacturer']);
+$this->setProperty('isPlugged', $state['plugged']);
+$this->setProperty('keyguardLocked', $state['keyguardLocked']);
+$this->setProperty('currentTabIndex', $state['currentTabIndex']);
+$this->setProperty('isDeviceAdmin', $state['isDeviceAdmin']);
+$this->setProperty('batteryLevel', $state['batteryLevel']);
+$this->setProperty('appUsedMemory', $state['appUsedMemory']);
+$this->setProperty('locationProvider', $state['locationProvider']);
+$this->setProperty('locationLatitude', $state['locationLatitude']);
+$this->setProperty('hostname6', $state['hostname6']);
+$this->setProperty('hostname4', $state['hostname4']);
+$this->setProperty('ramTotalMemory', $state['ramTotalMemory']);
+$this->setProperty('kioskLocked', $state['kioskLocked']);
+$this->setProperty('ip4', $state['ip4']);
+$this->setProperty('deviceID', $state['deviceID']);
+$this->setProperty('isDeviceOwner', $state['isDeviceOwner']);
+$this->setProperty('ip6', $state['ip6']);
+$this->setProperty('displayWidthPixels', $state['displayWidthPixels']);
+$this->setProperty('androidVersion', $state['androidVersion']);
+$this->setProperty('screenBrightness', $state['screenBrightness']);
+$this->setProperty('webviewUa', $state['webviewUa']);
+$this->setProperty('deviceModel', $state['deviceModel']);
+$this->setProperty('currentPage', $state['currentPage']);
+$this->setProperty('motionDetectorState', $state['motionDetectorState']);
+//-------------------------------------------------------------------------
